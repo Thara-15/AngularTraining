@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bug Tracker — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="topbar" role="banner">
+    <div class="topbar__brand">
+      <i class="fas fa-bug brand__icon"></i>
+    </div>
+
+    <form class="topbar__search" role="search" aria-label="Search bugs">
+      <input type="search" placeholder="Search bugs, projects, people…" aria-label="Search" />
+    </form>
+
+    <nav class="topbar__actions" aria-label="Quick actions">
+      <button class="btn btn--ghost">+ New Bug</button>
+      <button class="btn btn--primary">Export</button>
+      <div class="user">
+        <img src="https://i.pravatar.cc/40?img=3" alt="User avatar" />
+        <span>Alex (PM)</span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main" role="main">
+    <!-- KPIs -->
+    <section class="kpis" aria-label="Key metrics">
+      <article class="kpi">
+        <h3>Total Bugs</h3>
+        <p class="kpi__value">1,284</p>
+        <p class="kpi__delta up">+38 this week</p>
+      </article>
+      <article class="kpi">
+        <h3>Open</h3>
+        <p class="kpi__value">312</p>
+        <p class="kpi__delta neutral">–</p>
+      </article>
+      <article class="kpi">
+        <h3>In Progress</h3>
+        <p class="kpi__value">95</p>
+        <p class="kpi__delta up">+7</p>
+      </article>
+      <article class="kpi">
+        <h3>Resolved</h3>
+        <p class="kpi__value">877</p>
+        <p class="kpi__delta down">-12</p>
+      </article>
+      <article class="kpi">
+        <h3>Critical</h3>
+        <p class="kpi__value">18</p>
+        <p class="kpi__delta up">+3</p>
+      </article>
+      <article class="kpi">
+        <h3>Avg. Resolution</h3>
+        <p class="kpi__value">1.9d</p>
+        <p class="kpi__delta down">-0.3d</p>
+      </article>
+    </section>
+
+    <!-- Charts Row -->
+    <section class="grid-2">
+      <article class="panel">
+        <header class="panel__head">
+          <h3>Status Distribution</h3>
+          <span class="badge">This month</span>
+        </header>
+        <div class="chart" aria-label="Status chart placeholder">
+          <span>[ donut / pie chart ]</span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <header class="panel__head">
+          <h3>Created vs Resolved</h3>
+          <span class="badge">Last 12 weeks</span>
+        </header>
+        <div class="chart" aria-label="Trend chart placeholder">
+          <span>[ area / line chart ]</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- My Assigned + Project Overview -->
+    <section class="grid-2">
+      <article class="panel">
+        <header class="panel__head">
+          <h3>My Assigned Bugs</h3>
+          <a class="link" href="#">View all</a>
+        </header>
+
+        <table class="table" aria-label="My assigned bugs">
+          <thead>
+            <tr>
+              <th>ID</th><th>Title</th><th>Priority</th><th>Status</th><th>Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#BT-1209</td><td>OAuth callback fails on Safari</td>
+              <td><span class="pill pill--crit">Critical</span></td>
+              <td><span class="pill pill--open">Open</span></td>
+              <td>1h ago</td>
+            </tr>
+            <tr>
+              <td>#BT-1188</td><td>Chart labels overlap in RTL</td>
+              <td><span class="pill pill--high">High</span></td>
+              <td><span class="pill pill--prog">In Progress</span></td>
+              <td>3h ago</td>
+            </tr>
+            <tr>
+              <td>#BT-1120</td><td>Dark mode contrast on badges</td>
+              <td><span class="pill pill--med">Medium</span></td>
+              <td><span class="pill pill--res">Resolved</span></td>
+              <td>Yesterday</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="panel">
+        <header class="panel__head">
+          <h3>Projects Overview</h3>
+          <a class="link" href="#">Manage</a>
+        </header>
+
+        <div class="projects">
+          <div class="proj">
+            <div class="proj__head">
+              <h4>Web App</h4>
+              <span class="badge badge--ok">Stable</span>
+            </div>
+            <div class="proj__stat"><span>Open</span><b>72</b></div>
+            <div class="proj__stat"><span>Critical</span><b>6</b></div>
+            <div class="progress"><span style="width:72%"></span></div>
+          </div>
+
+          <div class="proj">
+            <div class="proj__head">
+              <h4>API</h4>
+              <span class="badge badge--warn">Attention</span>
+            </div>
+            <div class="proj__stat"><span>Open</span><b>118</b></div>
+            <div class="proj__stat"><span>Critical</span><b>9</b></div>
+            <div class="progress"><span style="width:55%"></span></div>
+          </div>
+
+          <div class="proj">
+            <div class="proj__head">
+              <h4>Mobile</h4>
+              <span class="badge">Healthy</span>
+            </div>
+            <div class="proj__stat"><span>Open</span><b>45</b></div>
+            <div class="proj__stat"><span>Critical</span><b>3</b></div>
+            <div class="progress"><span style="width:35%"></span></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Activity Feed -->
+    <section class="panel">
+      <header class="panel__head">
+        <h3>Recent Activity</h3>
+        <button class="btn btn--ghost">Refresh</button>
+      </header>
+      <ul class="activity">
+        <li><b>Maria</b> closed <span class="mono">#BT-1092</span> “Memory leak in queue worker” <em>5m ago</em></li>
+        <li><b>Sam</b> commented on <span class="mono">#BT-1209</span> “Added repro steps” <em>19m ago</em></li>
+        <li><b>Priya</b> created <span class="mono">#BT-1211</span> “Toast not dismissing on iOS” <em>1h ago</em></li>
+        <li><b>Alex</b> assigned <span class="mono">#BT-1188</span> to <b>Sam</b> <em>3h ago</em></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

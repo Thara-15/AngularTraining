@@ -1,0 +1,103 @@
+/* =============================
+   SECTION TITLES
+============================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
+  color: #763f4a; /* primary palette color */
+}
+
+/* =============================
+   PROJECTS CAROUSEL
+============================= */
+.projects-carousel {
+  display: flex;
+  justify-content: center; /* center the cards horizontally */
+  align-items: center; /* vertically center if needed */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2rem;
+  padding: 2rem 1rem; /* breathing space */
+  scroll-padding: 2rem;
+}
+
+/* Hide scrollbar for cleaner look */
+.projects-carousel::-webkit-scrollbar {
+  display: none;
+}
+.projects-carousel {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* =============================
+   PROJECT CARD
+============================= */
+.project-card {
+  flex: 0 0 300px; /* fixed width for carousel cards */
+  background-color: #f2f1ed; /* lightest color from palette */
+  border: 2px solid #763f4a; /* primary palette */
+  border-radius: 15px;
+  padding: 1.5rem;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.project-card h3 {
+  color: #781f37; /* secondary color from palette */
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  color: #3d0812; /* dark color from palette */
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* =============================
+   CASE STUDY BUTTON
+============================= */
+.btn-case-study {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(45deg, #763f4a, #781f37);
+  color: #f2f1ed;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-case-study:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .projects-carousel {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-card {
+    flex: 0 0 250px;
+    padding: 1rem;
+  }
+
+  .btn-case-study {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

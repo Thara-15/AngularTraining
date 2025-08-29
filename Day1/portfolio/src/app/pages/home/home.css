@@ -1,0 +1,267 @@
+:root {
+  --light: #f2f1ed;
+  --primary-1: #763f4a;
+  --primary-2: #781f37;
+  --dark-1: #3d0812;
+  --dark-2: #1d060a;
+  --subtle-bg: #4f1c27; /* subtle background for cards */
+}
+
+/* GENERAL SECTIONS */
+.section {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  color: var(--primary-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HERO SECTION */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-illustration img {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* HERO TEXT */
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  font-style: italic;
+  margin-bottom: 16px;
+  color: var(--primary-2);
+}
+
+.hero-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary-1);
+}
+
+.hero-intro {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  color: var(--primary-1);
+}
+
+/* CTA BUTTON */
+.btn-resume {
+  background: var(--dark-1);
+  color: var(--dark-1);
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.25s ease;
+}
+
+.btn-resume:hover {
+  background: var(--primary-1);
+  transform: scale(1.05);
+}
+
+/* SECTION TITLES */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--primary-2);
+  text-align: center;
+  position: relative;
+}
+
+/* ABOUT ME */
+.section-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--dark-2);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* SKILLS CARDS */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.skill-card {
+  background: var(--dark-1);
+  padding: 24px;
+  border-radius: 20px;
+  flex: 1 1 220px;
+  min-width: 220px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, background 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: var(--dark-2);
+}
+
+.skill-card h3 {
+  color: var(--primary-1);
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  color: var(--light);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* EDUCATION */
+.education-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.education-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  background: var(--subtle-bg);
+  padding: 12px 20px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+}
+.education-list li img {
+  width: 60px;             /* reduce size */
+  height: 60px;
+  object-fit: contain;      /* maintain aspect ratio */
+  border-radius: 50%;       /* optional: circular images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-list li img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* slightly stronger shadow on hover */
+}
+
+
+/* WORK EXPERIENCE TIMELINE */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 40px;
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: var(--primary-1);
+  width: 100px;
+  text-align: right;
+}
+
+.timeline-content {
+  background: var(--subtle-bg);
+  padding: 16px 24px;
+  border-radius: 16px;
+  color: var(--light);
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* HOBBIES */
+.hobbies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hobby {
+  background: var(--subtle-bg);
+  padding: 16px 24px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 1rem;
+  color: var(--primary-1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background 0.25s ease;
+}
+
+.hobby:hover {
+  transform: translateY(-5px);
+  background: var(--dark-2);
+}
+
+/* CONTACT */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: var(--primary-2);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+  color: var(--primary-1);
+}

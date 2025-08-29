@@ -1,0 +1,128 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+  color: #e2e8f0;
+}
+
+/* Centered container */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* Card */
+.login-card {
+  background: #111827;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Brand */
+.login-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #C084FC;
+}
+
+.login-brand i {
+  font-size: 1.8rem;
+}
+
+/* Title & subtitle */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #9CA3AF;
+  margin-bottom: 25px;
+}
+
+/* Form fields */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #1F2937;
+  color: #e2e8f0;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  background: #2d3748;
+  box-shadow: 0 0 8px rgba(196, 132, 252, 0.6);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #4338CA, #C084FC);
+  color: #FFF;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 18px rgba(196, 132, 252, 0.4);
+}
+
+/* Extra links */
+.extra-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.extra-links a {
+  color: #38b2ac;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.extra-links a:hover {
+  color: #81e6d9;
+}

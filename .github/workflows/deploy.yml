@@ -30,9 +30,13 @@ jobs:
         if [ -f "Assessment-1/Angular-StudentPortal-Assignment/package.json" ]; then
           cd Assessment-1/Angular-StudentPortal-Assignment
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Assessment-1/Angular-StudentPortal-Assignment/
           mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
-          cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+          if [ -d "dist/angular-student-portal-assignment" ]; then
+            cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+          else
+            cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+          fi
           cd ../..
         fi
         
@@ -40,25 +44,39 @@ jobs:
       run: |
         # Copy static projects
         mkdir -p deploy/Day1
-        cp -r Day1/Hangman deploy/Day1/
-        cp -r Day1/ts-app deploy/Day1/
+        if [ -d "Day1/Hangman" ]; then
+          cp -r Day1/Hangman deploy/Day1/
+        fi
+        if [ -d "Day1/ts-app" ]; then
+          cp -r Day1/ts-app deploy/Day1/
+        fi
         
         # Build Angular projects
         if [ -f "Day1/portfolio/package.json" ]; then
           cd Day1/portfolio
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Day1/portfolio/
           mkdir -p ../../deploy/Day1/portfolio
-          cp -r dist/portfolio/* ../../deploy/Day1/portfolio/
+          if [ -d "dist/portfolio" ]; then
+            cp -r dist/portfolio/* ../../deploy/Day1/portfolio/
+          else
+            cp -r dist/* ../../deploy/Day1/portfolio/
+          fi
           cd ../..
         fi
         
         if [ -f "Day1/Sample-Project/package.json" ]; then
           cd Day1/Sample-Project
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Day1/Sample-Project/
           mkdir -p ../../deploy/Day1/Sample-Project
-          cp -r dist/sample-project/* ../../deploy/Day1/Sample-Project/
+          if [ -d "dist/Sample-Project" ]; then
+            cp -r dist/Sample-Project/* ../../deploy/Day1/Sample-Project/
+          elif [ -d "dist/sample-project" ]; then
+            cp -r dist/sample-project/* ../../deploy/Day1/Sample-Project/
+          else
+            cp -r dist/* ../../deploy/Day1/Sample-Project/
+          fi
           cd ../..
         fi
         
@@ -67,9 +85,13 @@ jobs:
         if [ -f "Day2/prime-app/package.json" ]; then
           cd Day2/prime-app
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Day2/prime-app/
           mkdir -p ../../deploy/Day2/prime-app
-          cp -r dist/prime-app/* ../../deploy/Day2/prime-app/
+          if [ -d "dist/prime-app" ]; then
+            cp -r dist/prime-app/* ../../deploy/Day2/prime-app/
+          else
+            cp -r dist/* ../../deploy/Day2/prime-app/
+          fi
           cd ../..
         fi
         
@@ -78,9 +100,13 @@ jobs:
         if [ -f "Day3/portfolio/package.json" ]; then
           cd Day3/portfolio
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Day3/portfolio/
           mkdir -p ../../deploy/Day3/portfolio
-          cp -r dist/portfolio/* ../../deploy/Day3/portfolio/
+          if [ -d "dist/portfolio" ]; then
+            cp -r dist/portfolio/* ../../deploy/Day3/portfolio/
+          else
+            cp -r dist/* ../../deploy/Day3/portfolio/
+          fi
           cd ../..
         fi
         
@@ -89,9 +115,15 @@ jobs:
         if [ -f "Day4/Sample-Project/package.json" ]; then
           cd Day4/Sample-Project
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Day4/Sample-Project/
           mkdir -p ../../deploy/Day4/Sample-Project
-          cp -r dist/sample-project/* ../../deploy/Day4/Sample-Project/
+          if [ -d "dist/Sample-Project" ]; then
+            cp -r dist/Sample-Project/* ../../deploy/Day4/Sample-Project/
+          elif [ -d "dist/sample-project" ]; then
+            cp -r dist/sample-project/* ../../deploy/Day4/Sample-Project/
+          else
+            cp -r dist/* ../../deploy/Day4/Sample-Project/
+          fi
           cd ../..
         fi
         
@@ -100,9 +132,15 @@ jobs:
         if [ -f "Day5/Sample-Project/package.json" ]; then
           cd Day5/Sample-Project
           npm ci
-          npm run build
+          npm run build -- --base-href=/AngularTraining/Day5/Sample-Project/
           mkdir -p ../../deploy/Day5/Sample-Project
-          cp -r dist/sample-project/* ../../deploy/Day5/Sample-Project/
+          if [ -d "dist/Sample-Project" ]; then
+            cp -r dist/Sample-Project/* ../../deploy/Day5/Sample-Project/
+          elif [ -d "dist/sample-project" ]; then
+            cp -r dist/sample-project/* ../../deploy/Day5/Sample-Project/
+          else
+            cp -r dist/* ../../deploy/Day5/Sample-Project/
+          fi
           cd ../..
         fi
         

@@ -71,9 +71,7 @@ jobs:
           npm ci
           npm run build -- --base-href=/AngularTraining/Day1/Sample-Project/
           mkdir -p ../../deploy/Day1/Sample-Project
-          if [ -d "dist/Sample-Project" ]; then
-            cp -r dist/Sample-Project/* ../../deploy/Day1/Sample-Project/
-          elif [ -d "dist/sample-project" ]; then
+          if [ -d "dist/sample-project" ]; then
             cp -r dist/sample-project/* ../../deploy/Day1/Sample-Project/
           else
             cp -r dist/* ../../deploy/Day1/Sample-Project/
@@ -118,9 +116,7 @@ jobs:
           npm ci
           npm run build -- --base-href=/AngularTraining/Day4/Sample-Project/
           mkdir -p ../../deploy/Day4/Sample-Project
-          if [ -d "dist/Sample-Project" ]; then
-            cp -r dist/Sample-Project/* ../../deploy/Day4/Sample-Project/
-          elif [ -d "dist/sample-project" ]; then
+          if [ -d "dist/sample-project" ]; then
             cp -r dist/sample-project/* ../../deploy/Day4/Sample-Project/
           else
             cp -r dist/* ../../deploy/Day4/Sample-Project/
@@ -135,9 +131,7 @@ jobs:
           npm ci
           npm run build -- --base-href=/AngularTraining/Day5/Sample-Project/
           mkdir -p ../../deploy/Day5/Sample-Project
-          if [ -d "dist/Sample-Project" ]; then
-            cp -r dist/Sample-Project/* ../../deploy/Day5/Sample-Project/
-          elif [ -d "dist/sample-project" ]; then
+          if [ -d "dist/sample-project" ]; then
             cp -r dist/sample-project/* ../../deploy/Day5/Sample-Project/
           else
             cp -r dist/* ../../deploy/Day5/Sample-Project/

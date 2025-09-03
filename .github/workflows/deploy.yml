@@ -32,12 +32,17 @@ jobs:
           npm ci
           npm run build -- --base-href=/AngularTraining/Assessment-1/Angular-StudentPortal-Assignment/
           mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
+          echo "Contents of dist directory:"
           ls -la dist/
           if [ -d "dist/angular-student-portal-assignment" ]; then
+            echo "Copying from dist/angular-student-portal-assignment/"
             cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
-          elif [ -d "dist" ]; then
+          else
+            echo "Copying from dist/"
             cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
           fi
+          echo "Contents of deployment directory:"
+          ls -la ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
           cd ../..
         fi
         
@@ -155,10 +160,15 @@ jobs:
         </body>
         </html>' > deploy/404.html
       
+    - name: List deployment contents
+      run: |
+        echo "Final deployment directory structure:"
+        find deploy -type f | head -20
+        
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./deploy
-        cname: false
+        force_orphan: true

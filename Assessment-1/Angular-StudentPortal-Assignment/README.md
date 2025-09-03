@@ -2,6 +2,10 @@
 
 A complete Angular application for managing student information with features including registration, listing, and editing student details.
 
+## 🌐 Live Demo
+
+**[View Live Application](https://thara-15.github.io/AngularTraining/)**
+
 ## Features
 
 1. **Student Registration**

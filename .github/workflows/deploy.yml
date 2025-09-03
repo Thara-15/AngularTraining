@@ -45,19 +45,24 @@ jobs:
           if npm ci && npm run build -- --base-href=/AngularTraining/Assessment-1/Angular-StudentPortal-Assignment/; then
             mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
             echo "Assessment-1 build successful"
+            echo "=== DIST DIRECTORY STRUCTURE ==="
+            find dist -type f | head -10
+            echo "=== CHECKING DIRECTORIES ==="
             ls -la dist/
-            if [ -d "dist/angular-student-portal-assignment/browser" ]; then
-              cp -r dist/angular-student-portal-assignment/browser/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
-              echo "Copied from dist/angular-student-portal-assignment/browser/"
-            elif [ -d "dist/angular-student-portal-assignment" ]; then
+            if [ -d "dist/angular-student-portal-assignment" ]; then
+              echo "Found dist/angular-student-portal-assignment, contents:"
+              ls -la dist/angular-student-portal-assignment/
               cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
               echo "Copied from dist/angular-student-portal-assignment/"
             else
+              echo "No angular-student-portal-assignment folder, copying all dist contents"
               cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
               echo "Copied from dist/"
             fi
-            echo "Assessment-1 deployment contents:"
+            echo "=== FINAL DEPLOYMENT CONTENTS ==="
             ls -la ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+            echo "=== CHECKING FOR INDEX.HTML ==="
+            find ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/ -name "index.html" -type f
             echo "Assessment-1 deployed successfully"
           else
             echo "Assessment-1 build failed, skipping deployment"

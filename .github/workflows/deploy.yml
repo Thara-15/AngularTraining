@@ -32,15 +32,11 @@ jobs:
           npm ci
           npm run build -- --base-href=/AngularTraining/Assessment-1/Angular-StudentPortal-Assignment/
           mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
+          ls -la dist/
           if [ -d "dist/angular-student-portal-assignment" ]; then
-            cp dist/angular-student-portal-assignment/index.html ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
-            cp -r dist/angular-student-portal-assignment/*.js ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/ 2>/dev/null || true
-            cp -r dist/angular-student-portal-assignment/*.css ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/ 2>/dev/null || true
-            cp -r dist/angular-student-portal-assignment/assets ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/ 2>/dev/null || true
-            cp -r dist/angular-student-portal-assignment/favicon.ico ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/ 2>/dev/null || true
-          else
-            find dist -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "favicon.ico" | xargs -I {} cp {} ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
-            cp -r dist/assets ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/ 2>/dev/null || true
+            cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+          elif [ -d "dist" ]; then
+            cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
           fi
           cd ../..
         fi

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Training Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .day-section {
+            margin-bottom: 40px;
+        }
+        
+        .day-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            color: #6c757d;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .project-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .assessment-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .assessment-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .assessment-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .assessment-link {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .assessment-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Angular Training Projects</h1>
+            <p>A comprehensive collection of Angular learning projects and assignments</p>
+        </div>
+        
+        <div class="content">
+            <!-- Assessment Section -->
+            <div class="assessment-section">
+                <h2 class="assessment-title">📋 Assessment</h2>
+                <div class="projects-grid">
+                    <div class="assessment-card">
+                        <h3 class="project-title">Student Portal Assignment</h3>
+                        <p class="project-description">Complete Angular application with student registration and management features</p>
+                        <a href="./Assessment-1/Angular-StudentPortal-Assignment/dist/angular-student-portal-assignment/index.html" class="project-link assessment-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 1 Projects -->
+            <div class="day-section">
+                <h2 class="day-title">📅 Day 1 - Getting Started</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Hangman Game</h3>
+                        <p class="project-description">Interactive word guessing game built with TypeScript</p>
+                        <a href="./Day1/Hangman/index.html" class="project-link">Play Game</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">Personal portfolio showcasing projects and skills</p>
+                        <a href="./Day1/portfolio/dist/portfolio/index.html" class="project-link">View Portfolio</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">Sample Project</h3>
+                        <p class="project-description">Basic Angular application with routing and components</p>
+                        <a href="./Day1/Sample-Project/dist/sample-project/index.html" class="project-link">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">TypeScript App</h3>
+                        <p class="project-description">Simple TypeScript application demonstrating basic concepts</p>
+                        <a href="./Day1/ts-app/index.html" class="project-link">View App</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 Projects -->
+            <div class="day-section">
+                <h2 class="day-title">📅 Day 2 - Components & Services</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Prime App</h3>
+                        <p class="project-description">Angular application using PrimeNG components and modern UI</p>
+                        <a href="./Day2/prime-app/dist/prime-app/index.html" class="project-link">View App</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 Projects -->
+            <div class="day-section">
+                <h2 class="day-title">📅 Day 3 - Forms & Validation</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Enhanced Portfolio</h3>
+                        <p class="project-description">Updated portfolio with contact forms and enhanced features</p>
+                        <a href="./Day3/portfolio/dist/portfolio/index.html" class="project-link">View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 4 Projects -->
+            <div class="day-section">
+                <h2 class="day-title">📅 Day 4 - HTTP & APIs</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Sample Project</h3>
+                        <p class="project-description">Angular application with HTTP client and API integration</p>
+                        <a href="./Day4/Sample-Project/dist/sample-project/index.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 5 Projects -->
+            <div class="day-section">
+                <h2 class="day-title">📅 Day 5 - Advanced Topics</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Final Sample Project</h3>
+                        <p class="project-description">Comprehensive Angular application with advanced features</p>
+                        <a href="./Day5/Sample-Project/dist/sample-project/index.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Angular Training Projects - Built with ❤️ using Angular Framework</p>
+        </div>
+    </div>
+</body>
+</html>

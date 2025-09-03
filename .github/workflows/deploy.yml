@@ -32,7 +32,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
-          cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+          cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
           cd ../..
         fi
         
@@ -49,7 +49,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Day1/portfolio
-          cp -r dist/* ../../deploy/Day1/portfolio/
+          cp -r dist/portfolio/* ../../deploy/Day1/portfolio/
           cd ../..
         fi
         
@@ -58,7 +58,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Day1/Sample-Project
-          cp -r dist/* ../../deploy/Day1/Sample-Project/
+          cp -r dist/sample-project/* ../../deploy/Day1/Sample-Project/
           cd ../..
         fi
         
@@ -69,7 +69,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Day2/prime-app
-          cp -r dist/* ../../deploy/Day2/prime-app/
+          cp -r dist/prime-app/* ../../deploy/Day2/prime-app/
           cd ../..
         fi
         
@@ -80,7 +80,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Day3/portfolio
-          cp -r dist/* ../../deploy/Day3/portfolio/
+          cp -r dist/portfolio/* ../../deploy/Day3/portfolio/
           cd ../..
         fi
         
@@ -91,7 +91,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Day4/Sample-Project
-          cp -r dist/* ../../deploy/Day4/Sample-Project/
+          cp -r dist/sample-project/* ../../deploy/Day4/Sample-Project/
           cd ../..
         fi
         
@@ -102,7 +102,7 @@ jobs:
           npm ci
           npm run build
           mkdir -p ../../deploy/Day5/Sample-Project
-          cp -r dist/* ../../deploy/Day5/Sample-Project/
+          cp -r dist/sample-project/* ../../deploy/Day5/Sample-Project/
           cd ../..
         fi
         

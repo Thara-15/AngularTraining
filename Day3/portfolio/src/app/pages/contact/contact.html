@@ -1,0 +1,61 @@
+<div class="contact-section">
+  <div class="contact-wrapper">
+    <!-- Left side - Illustration -->
+    <div class="contact-illustration">
+      <img src="assets/contact-illus.svg" alt="Contact Illustration" />
+    </div>
+
+    <!-- Right side - Contact Form Card -->
+    <div class="contact-form-container">
+      <div class="contact-card">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-subtitle">I'd love to hear from you! Send me a message.</p>
+        
+        <form (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              [(ngModel)]="contactForm.name" 
+              class="form-input" 
+              required
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              [(ngModel)]="contactForm.email" 
+              class="form-input" 
+              required
+              placeholder="your.email@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              [(ngModel)]="contactForm.message" 
+              class="form-textarea" 
+              rows="5" 
+              required
+              placeholder="Your message here..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-send">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

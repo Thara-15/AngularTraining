@@ -1,0 +1,117 @@
+/* ==============================
+   Global Styles
+============================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   Header / Navbar
+============================== */
+header {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #a78bfa; /* purple accent */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+nav a {
+  color: #ffffff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* PrimeIcons styling */
+nav a i.pi {
+  font-size: 1rem;
+  color: #a78bfa;
+  display: inline-block !important;
+  font-family: 'primeicons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 1em;
+  text-align: center;
+}
+
+/* Bootstrap Icons styling */
+nav a i.bi {
+  font-size: 1rem;
+  color: #a78bfa;
+  display: inline-block !important;
+  font-family: 'Bootstrap Icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 1em;
+  text-align: center;
+}
+
+/* Hover effect */
+nav a:hover {
+  color: #38b2ac; /* teal highlight */
+  background-color: rgba(56, 178, 172, 0.1);
+}
+
+nav a:hover i {
+  color: #38b2ac;
+}
+
+/* Active page indication */
+nav a.active-link {
+  color: #38b2ac; /* teal highlight for active page */
+  font-weight: 600;
+  background-color: rgba(56, 178, 172, 0.15);
+  border-bottom: 2px solid #a78bfa; /* subtle purple underline */
+}
+
+nav a.active-link i {
+  color: #38b2ac;
+}

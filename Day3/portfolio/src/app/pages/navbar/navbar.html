@@ -1,0 +1,22 @@
+<nav class="glass-nav">
+  <div class="nav-inner">
+    <!-- Brand -->
+    <div class="brand" (click)="navigateTo('/')">
+      {{ brand }}
+    </div>
+
+    <!-- Navigation links -->
+    <ul class="nav-list">
+      <li *ngFor="let link of navLinks" class="nav-item">
+        <a
+          [class.active]="isActive(link.path)"
+          (click)="navigateTo(link.path)"
+          class="nav-link"
+        >
+          <i [class]="link.icon" class="nav-icon"></i>
+          {{ link.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

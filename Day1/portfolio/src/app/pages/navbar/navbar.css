@@ -1,0 +1,99 @@
+:root {
+  --light: #f2f1ed;
+  --primary-1: #763f4a;
+  --primary-2: #781f37;
+  --dark-1: #3d0812;
+  --dark-2: #1d060a;
+  --glass-bg: rgba(61, 8, 18, 0.75);
+  --nav-height: 90px;
+}
+
+/* NAV CONTAINER */
+.glass-nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: var(--nav-height);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--glass-bg);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Inner layout */
+.nav-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: var(--light);
+  cursor: pointer;
+  transition: transform 0.25s ease, color 0.25s ease;
+  padding: 10px 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.35); /* subtle shadow */
+  user-select: none;
+}
+
+.brand:hover {
+  transform: scale(1.08);
+  color: var(--primary-1);
+}
+
+/* Nav list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  letter-spacing: 0.8px;
+  color: var(--light);
+  padding: 5px 20px;
+  border-radius: 28px;
+  transition: background 0.35s ease, transform 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* subtle shadow */
+  display: block;
+  user-select: none;
+}
+
+/* Active link pill */
+.nav-link.active {
+  background: rgba(118, 31, 55, 0.85); /* darker tinted background */
+  color: #f2f1ed; /* pure white text */
+  transform: scale(1.05);
+  transition: background 0.35s ease, transform 0.3s ease, color 0.25s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  background: rgba(118, 31, 55, 1); /* subtle tinted hover */
+  color: #f2f1ed; /* always white text */
+  transform: scale(1.03);
+}
+
+

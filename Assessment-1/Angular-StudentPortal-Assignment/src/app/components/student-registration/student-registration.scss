@@ -1,0 +1,125 @@
+.registration-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  .card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: var(--transition);
+    
+    &:hover {
+      box-shadow: var(--shadow-lg);
+    }
+  }
+  
+  .card-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--background-light);
+    padding-bottom: 15px;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background: var(--primary-gradient);
+    }
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.15);
+    }
+  }
+  
+  .error-message {
+    color: #e53935;
+    font-size: 0.875rem;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    
+    &:before {
+      content: '⚠️';
+      margin-right: 5px;
+    }
+  }
+  
+  .form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition);
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    
+    &:hover {
+      opacity: 0.9;
+      box-shadow: 0 4px 10px rgba(106, 17, 203, 0.3);
+    }
+  }
+  
+  .btn-secondary {
+    background-color: var(--background-light);
+    color: var(--text-color);
+    margin-right: 15px;
+    
+    &:hover {
+      background-color: var(--background-light);
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .registration-container {
+    padding: 10px;
+  }
+}

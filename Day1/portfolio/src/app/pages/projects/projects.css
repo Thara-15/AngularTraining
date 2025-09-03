@@ -1,0 +1,116 @@
+/* =============================
+   SECTION TITLES
+============================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
+  color: #763f4a; /* primary palette color */
+}
+
+/* =============================
+   PROJECTS CAROUSEL
+============================= */
+.projects-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* ensure equal height */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  scroll-padding: 2rem;
+}
+
+/* Hide scrollbar for cleaner look */
+.projects-carousel::-webkit-scrollbar {
+  display: none;
+}
+.projects-carousel {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* =============================
+   PROJECT CARD
+============================= */
+.project-card {
+  flex: 0 0 300px; /* fixed width for carousel cards */
+  background-color: #f2f1ed;
+  border: 2px solid #763f4a;
+  border-radius: 15px;
+  padding: 1.5rem;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Equal height fix */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.project-card h3 {
+  color: #781f37; /* secondary color */
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  color: #3d0812; /* dark color */
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* =============================
+   CASE STUDY BUTTON
+============================= */
+.btn-case-study {
+  display: inline-flex !important;   /* inline, shrink-to-fit */
+  align-items: center;               /* vertically center text */
+  justify-content: center;           /* horizontally center text */
+  width: auto !important;            /* no stretching */
+  max-width: fit-content !important; /* shrink to text width */
+  
+  padding: 8px 16px;                 /* equal left & right padding */
+  font-size: 0.95rem;
+  line-height: 1.2;
+  background: linear-gradient(45deg, #763f4a, #781f37);
+  color: #f2f1ed;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;               /* prevents wrapping */
+}
+
+.btn-case-study:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .projects-carousel {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-card {
+    flex: 0 0 250px;
+    padding: 1rem;
+  }
+
+  .btn-case-study {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

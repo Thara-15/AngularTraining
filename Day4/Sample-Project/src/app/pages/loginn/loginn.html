@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Bug Tracker</title>
+  <link rel="stylesheet" href="loginn.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons@6.0.1/primeicons.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="auth-shell">
+
+    <!-- PURE CSS TABS (no JS so it works inside Angular templates) -->
+    <input type="radio" id="tab-login"  name="authTab" checked />
+    <input type="radio" id="tab-signin" name="authTab" />
+
+    <!-- LEFT GRADIENT PANEL + SIDE NAV -->
+    <section class="left-pane">
+      <div class="side-tabs" aria-label="Authentication tabs">
+        <label class="tab" for="tab-login">LOGIN</label>
+        <label class="tab" for="tab-signin">SIGN UP</label>
+        <span class="slider" aria-hidden="true"></span>
+      </div>
+      <div class="brand-mark">
+        <i class="fas fa-bug"></i>
+        <!-- <span>BugTracker</span> -->
+      </div>
+    </section>
+
+    <!-- RIGHT CONTENT PANEL -->
+    <section class="right-pane">
+
+      <!-- LOGIN -->
+      <div class="form-card login">
+        <h1 class="title">Welcome Back</h1>
+        <p class="subtitle">Login to your account</p>
+
+        <form class="login-form">
+          <div class="form-group">
+            <label for="username">
+              <i class="pi pi-user"></i> Username
+            </label>
+            <input id="username" type="text" placeholder="Enter your username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">
+              <i class="pi pi-lock"></i> Password
+            </label>
+            <input id="password" type="password" placeholder="Enter your password" required />
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+
+          <div class="extra-links">
+            <a href="#">Forgot Password?</a>
+            <a href="#">Create Account</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- SIGN IN -->
+      <div class="form-card signin">
+        <h1 class="title">Create Account</h1>
+        <p class="subtitle">Join BugTracker today</p>
+
+        <form class="login-form">
+          <div class="form-group">
+            <label for="newUsername">
+              <i class="pi pi-user"></i> Username
+            </label>
+            <input id="newUsername" type="text" placeholder="Choose a username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="newEmail">
+              <i class="pi pi-envelope" style="font-family: 'primeicons' !important;"></i> Email
+            </label>
+            <input id="newEmail" type="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="newPassword">
+              <i class="pi pi-lock"></i> Password
+            </label>
+            <input id="newPassword" type="password" placeholder="Create a password" required />
+          </div>
+
+          <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+      </div>
+
+    </section>
+  </div>
+</body>
+</html>

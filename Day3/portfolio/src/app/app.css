@@ -1,0 +1,43 @@
+:root {
+  --light: #f2f1ed;
+  --primary-1: #763f4a;
+  --primary-2: #781f37;
+  --dark-1: #3d0812;
+  --dark-2: #1d060a;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  background: var(--dark-2);
+  color: var(--light);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+.main-container {
+  padding-top: 74px; /* space for sticky navbar */
+  min-height: calc(100vh - 74px);
+  position: relative;
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 40px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--dark-1);
+  color: var(--light);
+  font-size: 14px;
+  width: 100%;
+}
+
+.footer.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

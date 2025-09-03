@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Tracker Application</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons@6.0.1/primeicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <header>
+    <h1>Bug Tracker</h1>
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <i class="pi pi-home"></i> Dashboard
+      </a>
+      <a routerLink="/bugs" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <i class="bi bi-bug"></i> Bugs
+      </a>
+      <a routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <i class="pi pi-user"></i> Login
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</body>
+</html>

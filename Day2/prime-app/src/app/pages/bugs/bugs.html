@@ -1,0 +1,137 @@
+
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="topbar__brand">
+        <!-- Font Awesome Bug Icon -->
+        <i class="fas fa-bug"></i>
+      </div>
+      <form class="topbar__search" role="search">
+        <input type="search" placeholder="Search bugs…" aria-label="Search bugs">
+      </form>
+    </div>
+
+    <nav class="topbar__actions">
+      <button class="btn btn--ghost">+ New Bug</button>
+      <button class="btn btn--primary">Export</button>
+      <div class="user">
+        <img src="https://i.pravatar.cc/40?img=3" alt="User avatar" />
+        <span>Tharanika N</span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Filters -->
+    <section class="filters">
+      <select>
+        <option value="">All Status</option>
+        <option value="open">Open</option>
+        <option value="in-progress">In Progress</option>
+        <option value="resolved">Resolved</option>
+        <option value="closed">Closed</option>
+      </select>
+
+      <select>
+        <option value="">All Priority</option>
+        <option value="critical">Critical</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <select>
+        <option value="">All Assignees</option>
+        <option value="alex">Alex</option>
+        <option value="sam">Sam</option>
+        <option value="maria">Maria</option>
+      </select>
+
+      <select>
+        <option value="">All Projects</option>
+        <option value="web">Web App</option>
+        <option value="api">API</option>
+        <option value="mobile">Mobile</option>
+      </select>
+    </section>
+
+    <!-- Bugs Table -->
+    <section class="bugs-table-section">
+      <table class="table" aria-label="Bug list">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Project</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Assignee</th>
+            <th>Environment</th>
+            <th>Tags</th>
+            <th>Reproduction</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Last Activity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#BT-1209</td>
+            <td>OAuth callback fails on Safari</td>
+            <td>Web App</td>
+            <td><span class="pill pill--crit">Critical</span></td>
+            <td><span class="pill pill--open">Open</span></td>
+            <td>Sam</td>
+            <td>MacOS / Safari 16</td>
+            <td>Auth, Web</td>
+            <td>Steps to reproduce available</td>
+            <td>01-08-2025</td>
+            <td>02-08-2025</td>
+            <td>Comment by Priya 30m ago</td>
+            <td>
+              <button class="btn btn--ghost">Edit</button>
+              <button class="btn btn--warn">Close</button>
+            </td>
+          </tr>
+          <tr>
+            <td>#BT-1188</td>
+            <td>Chart labels overlap in RTL</td>
+            <td>API</td>
+            <td><span class="pill pill--high">High</span></td>
+            <td><span class="pill pill--prog">In Progress</span></td>
+            <td>Priya</td>
+            <td>Linux / Chrome 115</td>
+            <td>Charts, RTL</td>
+            <td>Steps attached in ticket</td>
+            <td>28-07-2025</td>
+            <td>02-08-2025</td>
+            <td>Updated status 2h ago</td>
+            <td>
+              <button class="btn btn--ghost">Edit</button>
+              <button class="btn btn--warn">Close</button>
+            </td>
+          </tr>
+          <tr>
+            <td>#BT-1120</td>
+            <td>Dark mode contrast on badges</td>
+            <td>Mobile</td>
+            <td><span class="pill pill--med">Medium</span></td>
+            <td><span class="pill pill--res">Resolved</span></td>
+            <td>Alex</td>
+            <td>iOS / Safari 16</td>
+            <td>UI, Dark Mode</td>
+            <td>Repro steps in description</td>
+            <td>25-07-2025</td>
+            <td>01-08-2025</td>
+            <td>Closed by Maria 1d ago</td>
+            <td>
+              <button class="btn btn--ghost">Edit</button>
+              <button class="btn btn--warn">Close</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+
+/* Import PrimeNG Icons */
+@import "primeicons/primeicons.css";
+
+/* Global reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure proper button styling */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Ensure proper list styling */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

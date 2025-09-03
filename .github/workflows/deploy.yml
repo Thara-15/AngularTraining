@@ -33,23 +33,23 @@ jobs:
         fi
       
     - name: Build Assessment Project
+      continue-on-error: true
       run: |
         if [ -f "Assessment-1/Angular-StudentPortal-Assignment/package.json" ]; then
           cd Assessment-1/Angular-StudentPortal-Assignment
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Assessment-1/Angular-StudentPortal-Assignment/
-          mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
-          echo "Contents of dist directory:"
-          ls -la dist/
-          if [ -d "dist/angular-student-portal-assignment" ]; then
-            echo "Copying from dist/angular-student-portal-assignment/"
-            cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+          if npm ci && npm run build -- --base-href=/AngularTraining/Assessment-1/Angular-StudentPortal-Assignment/; then
+            mkdir -p ../../deploy/Assessment-1/Angular-StudentPortal-Assignment
+            echo "Assessment-1 build successful"
+            ls -la dist/
+            if [ -d "dist/angular-student-portal-assignment" ]; then
+              cp -r dist/angular-student-portal-assignment/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+            else
+              cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+            fi
+            echo "Assessment-1 deployed successfully"
           else
-            echo "Copying from dist/"
-            cp -r dist/* ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
+            echo "Assessment-1 build failed, skipping deployment"
           fi
-          echo "Contents of deployment directory:"
-          ls -la ../../deploy/Assessment-1/Angular-StudentPortal-Assignment/
           cd ../..
         fi
         
@@ -69,123 +69,115 @@ jobs:
         # Build Angular projects
         if [ -f "Day1/portfolio/package.json" ]; then
           cd Day1/portfolio
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Day1/portfolio/
-          mkdir -p ../../deploy/Day1/portfolio
-          echo "Day1/portfolio dist contents:"
-          ls -la dist/
-          if [ -d "dist/portfolio" ]; then
-            cp -r dist/portfolio/* ../../deploy/Day1/portfolio/
-            echo "Copied from dist/portfolio/"
+          if npm ci && npm run build -- --base-href=/AngularTraining/Day1/portfolio/; then
+            mkdir -p ../../deploy/Day1/portfolio
+            echo "Day1/portfolio build successful"
+            if [ -d "dist/portfolio" ]; then
+              cp -r dist/portfolio/* ../../deploy/Day1/portfolio/
+            else
+              cp -r dist/* ../../deploy/Day1/portfolio/
+            fi
+            echo "Day1/portfolio deployed successfully"
           else
-            cp -r dist/* ../../deploy/Day1/portfolio/
-            echo "Copied from dist/"
+            echo "Day1/portfolio build failed, skipping deployment"
           fi
-          echo "Day1/portfolio deployment contents:"
-          ls -la ../../deploy/Day1/portfolio/
           cd ../..
         fi
         
         if [ -f "Day1/Sample-Project/package.json" ]; then
           cd Day1/Sample-Project
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Day1/Sample-Project/
-          mkdir -p ../../deploy/Day1/Sample-Project
-          echo "Day1/Sample-Project dist contents:"
-          ls -la dist/
-          if [ -d "dist/sample-project" ]; then
-            cp -r dist/sample-project/* ../../deploy/Day1/Sample-Project/
-            echo "Copied from dist/sample-project/"
+          if npm ci && npm run build -- --base-href=/AngularTraining/Day1/Sample-Project/; then
+            mkdir -p ../../deploy/Day1/Sample-Project
+            echo "Day1/Sample-Project build successful"
+            if [ -d "dist/sample-project" ]; then
+              cp -r dist/sample-project/* ../../deploy/Day1/Sample-Project/
+            else
+              cp -r dist/* ../../deploy/Day1/Sample-Project/
+            fi
+            echo "Day1/Sample-Project deployed successfully"
           else
-            cp -r dist/* ../../deploy/Day1/Sample-Project/
-            echo "Copied from dist/"
+            echo "Day1/Sample-Project build failed, skipping deployment"
           fi
-          echo "Day1/Sample-Project deployment contents:"
-          ls -la ../../deploy/Day1/Sample-Project/
           cd ../..
         fi
         
     - name: Build Day2 Projects
+      continue-on-error: true
       run: |
         if [ -f "Day2/prime-app/package.json" ]; then
           cd Day2/prime-app
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Day2/prime-app/
-          mkdir -p ../../deploy/Day2/prime-app
-          echo "Day2/prime-app dist contents:"
-          ls -la dist/
-          if [ -d "dist/prime-app" ]; then
-            cp -r dist/prime-app/* ../../deploy/Day2/prime-app/
-            echo "Copied from dist/prime-app/"
+          if npm ci && npm run build -- --base-href=/AngularTraining/Day2/prime-app/; then
+            mkdir -p ../../deploy/Day2/prime-app
+            echo "Day2/prime-app build successful"
+            if [ -d "dist/prime-app" ]; then
+              cp -r dist/prime-app/* ../../deploy/Day2/prime-app/
+            else
+              cp -r dist/* ../../deploy/Day2/prime-app/
+            fi
+            echo "Day2/prime-app deployed successfully"
           else
-            cp -r dist/* ../../deploy/Day2/prime-app/
-            echo "Copied from dist/"
+            echo "Day2/prime-app build failed, skipping deployment"
           fi
-          echo "Day2/prime-app deployment contents:"
-          ls -la ../../deploy/Day2/prime-app/
           cd ../..
         fi
         
     - name: Build Day3 Projects
+      continue-on-error: true
       run: |
         if [ -f "Day3/portfolio/package.json" ]; then
           cd Day3/portfolio
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Day3/portfolio/
-          mkdir -p ../../deploy/Day3/portfolio
-          echo "Day3/portfolio dist contents:"
-          ls -la dist/
-          if [ -d "dist/portfolio" ]; then
-            cp -r dist/portfolio/* ../../deploy/Day3/portfolio/
-            echo "Copied from dist/portfolio/"
+          if npm ci && npm run build -- --base-href=/AngularTraining/Day3/portfolio/; then
+            mkdir -p ../../deploy/Day3/portfolio
+            echo "Day3/portfolio build successful"
+            if [ -d "dist/portfolio" ]; then
+              cp -r dist/portfolio/* ../../deploy/Day3/portfolio/
+            else
+              cp -r dist/* ../../deploy/Day3/portfolio/
+            fi
+            echo "Day3/portfolio deployed successfully"
           else
-            cp -r dist/* ../../deploy/Day3/portfolio/
-            echo "Copied from dist/"
+            echo "Day3/portfolio build failed, skipping deployment"
           fi
-          echo "Day3/portfolio deployment contents:"
-          ls -la ../../deploy/Day3/portfolio/
           cd ../..
         fi
         
     - name: Build Day4 Projects
+      continue-on-error: true
       run: |
         if [ -f "Day4/Sample-Project/package.json" ]; then
           cd Day4/Sample-Project
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Day4/Sample-Project/
-          mkdir -p ../../deploy/Day4/Sample-Project
-          echo "Day4/Sample-Project dist contents:"
-          ls -la dist/
-          if [ -d "dist/sample-project" ]; then
-            cp -r dist/sample-project/* ../../deploy/Day4/Sample-Project/
-            echo "Copied from dist/sample-project/"
+          if npm ci && npm run build -- --base-href=/AngularTraining/Day4/Sample-Project/; then
+            mkdir -p ../../deploy/Day4/Sample-Project
+            echo "Day4/Sample-Project build successful"
+            if [ -d "dist/sample-project" ]; then
+              cp -r dist/sample-project/* ../../deploy/Day4/Sample-Project/
+            else
+              cp -r dist/* ../../deploy/Day4/Sample-Project/
+            fi
+            echo "Day4/Sample-Project deployed successfully"
           else
-            cp -r dist/* ../../deploy/Day4/Sample-Project/
-            echo "Copied from dist/"
+            echo "Day4/Sample-Project build failed, skipping deployment"
           fi
-          echo "Day4/Sample-Project deployment contents:"
-          ls -la ../../deploy/Day4/Sample-Project/
           cd ../..
         fi
         
     - name: Build Day5 Projects
+      continue-on-error: true
       run: |
         if [ -f "Day5/Sample-Project/package.json" ]; then
           cd Day5/Sample-Project
-          npm ci
-          npm run build -- --base-href=/AngularTraining/Day5/Sample-Project/
-          mkdir -p ../../deploy/Day5/Sample-Project
-          echo "Day5/Sample-Project dist contents:"
-          ls -la dist/
-          if [ -d "dist/sample-project" ]; then
-            cp -r dist/sample-project/* ../../deploy/Day5/Sample-Project/
-            echo "Copied from dist/sample-project/"
+          if npm ci && npm run build -- --base-href=/AngularTraining/Day5/Sample-Project/; then
+            mkdir -p ../../deploy/Day5/Sample-Project
+            echo "Day5/Sample-Project build successful"
+            if [ -d "dist/sample-project" ]; then
+              cp -r dist/sample-project/* ../../deploy/Day5/Sample-Project/
+            else
+              cp -r dist/* ../../deploy/Day5/Sample-Project/
+            fi
+            echo "Day5/Sample-Project deployed successfully"
           else
-            cp -r dist/* ../../deploy/Day5/Sample-Project/
-            echo "Copied from dist/"
+            echo "Day5/Sample-Project build failed, skipping deployment"
           fi
-          echo "Day5/Sample-Project deployment contents:"
-          ls -la ../../deploy/Day5/Sample-Project/
           cd ../..
         fi
         

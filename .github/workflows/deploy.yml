@@ -193,7 +193,7 @@ jobs:
       run: |
         if [ -f "Day5/Sample-Project/package.json" ]; then
           cd Day5/Sample-Project
-          if npm ci && npm run build -- --base-href=/AngularTraining/Day5/Sample-Project/; then
+          if npm ci --legacy-peer-deps && npm run build -- --base-href=/AngularTraining/Day5/Sample-Project/; then
             mkdir -p ../../deploy/Day5/Sample-Project
             echo "Day5/Sample-Project build successful"
             if [ -d "dist/sample-project/browser" ]; then

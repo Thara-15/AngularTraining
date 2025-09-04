@@ -1,0 +1,68 @@
+<div class="add-bug-container">
+  <header class="form-header">
+    <h1>Add New Bug</h1>
+    <button class="btn btn--ghost" (click)="goBack()">← Back to Bugs</button>
+  </header>
+
+  <form class="bug-form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="title">Title *</label>
+        <input id="title" type="text" [(ngModel)]="bugData.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="project">Project *</label>
+        <select id="project" [(ngModel)]="bugData.project" name="project" required>
+          <option value="">Select Project</option>
+          <option value="Web App">Web App</option>
+          <option value="API">API</option>
+          <option value="Mobile">Mobile</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="priority">Priority *</label>
+        <select id="priority" [(ngModel)]="bugData.priority" name="priority" required>
+          <option value="">Select Priority</option>
+          <option value="Critical">Critical</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="assignee">Assignee</label>
+        <select id="assignee" [(ngModel)]="bugData.assignee" name="assignee">
+          <option value="">Select Assignee</option>
+          <option value="Alex">Alex</option>
+          <option value="Sam">Sam</option>
+          <option value="Maria">Maria</option>
+          <option value="Priya">Priya</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="environment">Environment</label>
+        <input id="environment" type="text" [(ngModel)]="bugData.environment" name="environment" placeholder="e.g., MacOS / Safari 16">
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input id="tags" type="text" [(ngModel)]="bugData.tags" name="tags" placeholder="e.g., Auth, Web">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="reproduction">Reproduction Steps</label>
+      <textarea id="reproduction" [(ngModel)]="bugData.reproduction" name="reproduction" rows="4" placeholder="Describe how to reproduce this bug..."></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn--ghost" (click)="goBack()">Cancel</button>
+      <button type="submit" class="btn btn--primary">Add Bug</button>
+    </div>
+  </form>
+</div>

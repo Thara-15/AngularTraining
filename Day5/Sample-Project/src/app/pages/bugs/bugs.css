@@ -1,0 +1,246 @@
+/* ================================
+   Bugs Page Styles — Dark Professional Palette
+   ================================ */
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0F0C29, #302B63, #24243E);
+  color: #EAEAF0;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+/* Topbar */
+.topbar {
+  height: 60px;
+  background: #111827;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Font Awesome Bug Icon — same size as dashboard dot */
+.fas.fa-bug {
+  font-size: 1.25rem;
+  color: #C084FC;
+}
+
+/* Search */
+.topbar__search input {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1F2937;
+  color: #EAEAF0;
+  width: 500px;
+}
+
+/* Actions */
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.user img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(90deg, #4338CA, #C084FC);
+  color: #FFF;
+}
+
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #EAEAF0;
+}
+
+.btn--ghost:hover {
+  border-color: #C084FC;
+  color: #C084FC;
+}
+
+.btn--warn {
+  background: transparent;
+  border: 1px solid #F87171;
+  color: #F87171;
+  padding: 8px 12px;
+}
+
+.btn--warn:hover {
+  background: #F87171;
+  color: #FFF;
+}
+
+.btn--ghost {
+  padding: 8px 12px;
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--warn {
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn i {
+  font-size: 14px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.btn i.bi {
+  font-family: 'Bootstrap Icons' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn i.fas {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900;
+}
+
+/* Main Content */
+.main {
+  padding: 25px 40px;
+  overflow-x: auto;
+}
+
+/* New Bug Form */
+.new-bug-form {
+  display: none;
+  background: #1F2937;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.new-bug-form input,
+.new-bug-form select,
+.new-bug-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #111827;
+  color: #EAEAF0;
+}
+
+.new-bug-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1F2937;
+  color: #EAEAF0;
+}
+
+/* Bugs Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead {
+  background: #4338CA;
+  color: #FFF;
+}
+
+.table th,
+.table td {
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.table tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
+.table tr:hover {
+  background: rgba(192,132,252,0.15);
+}
+
+/* Editable cells highlight */
+.editable[contenteditable="true"] {
+  background: rgba(67,56,202,0.1);
+}
+
+/* Pills for Priority and Status */
+.pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #FFF;
+  display: inline-block;
+  text-align: center;
+}
+
+.pill--critical { background: #DC2626; }
+.pill--high { background: #F97316; }
+.pill--medium { background: #EAB308; color: #111; }
+.pill--low { background: #10B981; }
+.pill--open { background: #4338CA; }
+.pill--inprogress { background: #C084FC; }
+.pill--resolved { background: #34D399; }
+.pill--closed { background: #6B7280; }

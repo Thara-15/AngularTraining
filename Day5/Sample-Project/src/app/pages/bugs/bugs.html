@@ -1,0 +1,97 @@
+<!-- Top Bar -->
+<header class="topbar">
+  <div class="topbar__brand">
+    <!-- Font Awesome Bug Icon -->
+    <i class="fas fa-bug"></i>
+  </div>
+
+  <form class="topbar__search" role="search">
+    <input type="search" placeholder="Search bugs…" aria-label="Search bugs">
+  </form>
+
+  <nav class="topbar__actions">
+    <button class="btn btn--ghost" (click)="addNewBug()">Add New Bug</button>
+    <div class="user">
+      <img src="https://i.pravatar.cc/40?img=3" alt="User avatar" />
+      <span>Tharanika N</span>
+    </div>
+  </nav>
+</header>
+
+<main class="main">
+  <!-- Filters -->
+  <section class="filters">
+    <select>
+      <option value="">All Status</option>
+      <option value="open">Open</option>
+      <option value="in-progress">In Progress</option>
+      <option value="resolved">Resolved</option>
+      <option value="closed">Closed</option>
+    </select>
+
+    <select>
+      <option value="">All Priority</option>
+      <option value="critical">Critical</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+
+    <select>
+      <option value="">All Assignees</option>
+      <option value="alex">Alex</option>
+      <option value="sam">Sam</option>
+      <option value="maria">Maria</option>
+    </select>
+
+    <select>
+      <option value="">All Projects</option>
+      <option value="web">Web App</option>
+      <option value="api">API</option>
+      <option value="mobile">Mobile</option>
+    </select>
+  </section>
+
+  <!-- Bugs Table -->
+  <section class="bugs-table-section">
+    <table class="table" aria-label="Bug list">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Project</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Assignee</th>
+          <th>Environment</th>
+          <th>Tags</th>
+          <th>Reproduction</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th>Last Activity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bug of bugs">
+          <td>{{bug.id}}</td>
+          <td>{{bug.title}}</td>
+          <td>{{bug.project}}</td>
+          <td><span class="pill" [ngClass]="'pill--' + bug.priority.toLowerCase()">{{bug.priority}}</span></td>
+          <td><span class="pill" [ngClass]="'pill--' + bug.status.toLowerCase().replace(' ', '')">{{bug.status}}</span></td>
+          <td>{{bug.assignee}}</td>
+          <td>{{bug.environment}}</td>
+          <td>{{bug.tags}}</td>
+          <td>{{bug.reproduction}}</td>
+          <td>{{bug.created}}</td>
+          <td>{{bug.updated}}</td>
+          <td>{{bug.lastActivity}}</td>
+          <td>
+            <button class="btn btn--ghost" title="Edit"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn--warn" title="Close"><i class="bi bi-x-lg"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

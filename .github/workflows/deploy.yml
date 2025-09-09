@@ -210,6 +210,28 @@ jobs:
           cd ../..
         fi
         
+    - name: Build Capstone Project
+      continue-on-error: true
+      run: |
+        if [ -f "Capstone-Project/hr-dashboard/package.json" ]; then
+          cd Capstone-Project/hr-dashboard
+          if npm ci && npm run build -- --base-href=/AngularTraining/Capstone-Project/hr-dashboard/; then
+            mkdir -p ../../deploy/Capstone-Project/hr-dashboard
+            echo "Capstone HR Dashboard build successful"
+            if [ -d "dist/hr-dashboard/browser" ]; then
+              cp -r dist/hr-dashboard/browser/* ../../deploy/Capstone-Project/hr-dashboard/
+            elif [ -d "dist/hr-dashboard" ]; then
+              cp -r dist/hr-dashboard/* ../../deploy/Capstone-Project/hr-dashboard/
+            else
+              cp -r dist/* ../../deploy/Capstone-Project/hr-dashboard/
+            fi
+            echo "Capstone HR Dashboard deployed successfully"
+          else
+            echo "Capstone HR Dashboard build failed, skipping deployment"
+          fi
+          cd ../..
+        fi
+        
     - name: Create 404.html
       run: |
         echo '<!DOCTYPE html>

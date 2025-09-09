@@ -215,7 +215,7 @@ jobs:
       run: |
         if [ -f "Capstone-Project/hr-dashboard/package.json" ]; then
           cd Capstone-Project/hr-dashboard
-          if npm ci && npm run build -- --base-href=/AngularTraining/Capstone-Project/hr-dashboard/; then
+          if npm ci --legacy-peer-deps && npm run build -- --base-href=/AngularTraining/Capstone-Project/hr-dashboard/; then
             mkdir -p ../../deploy/Capstone-Project/hr-dashboard
             echo "Capstone HR Dashboard build successful"
             if [ -d "dist/hr-dashboard/browser" ]; then

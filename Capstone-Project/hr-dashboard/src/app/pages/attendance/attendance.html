@@ -21,7 +21,6 @@
             <th>Days Present</th>
             <th>Days Absent</th>
             <th>Late Arrivals</th>
-            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -45,10 +44,6 @@
                 <i class="pi pi-clock status-icon status-late"></i>
                 {{ record.lateArrivals }}
               </div>
-            </td>
-            <td>
-              <i class="pi" [ngClass]="getStatusIcon(record.status)"></i>
-              {{ record.status }}
             </td>
           </tr>
         </tbody>

@@ -1,0 +1,43 @@
+<div class="employees-container">
+  <div class="page-header">
+    <h1 class="page-title">
+      <i class="pi pi-users"></i>
+      Employees
+    </h1>
+    <p class="page-subtitle">Manage and view all employee information</p>
+  </div>
+
+  <div class="search-container">
+    <input 
+      type="text" 
+      class="search-input" 
+      placeholder="Search employees by name, department, or role..."
+      [(ngModel)]="searchTerm"
+      (input)="filterEmployees()">
+  </div>
+
+  <div class="employees-grid">
+    <div class="employee-card" *ngFor="let employee of filteredEmployees">
+      <div class="employee-header">
+        <div class="employee-avatar">
+          {{ getInitials(employee.name) }}
+        </div>
+        <div class="employee-info">
+          <h3>{{ employee.name }}</h3>
+          <p>{{ employee.role }}</p>
+        </div>
+      </div>
+      
+      <div class="employee-details">
+        <div class="detail-row">
+          <span class="detail-label">Department:</span>
+          <span class="detail-value">{{ employee.department }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Status:</span>
+          <span class="status-badge" [ngClass]="getStatusClass(employee.status)">{{ employee.status }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

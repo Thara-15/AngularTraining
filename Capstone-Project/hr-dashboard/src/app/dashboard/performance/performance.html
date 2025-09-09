@@ -1,0 +1,23 @@
+<div class="performance-container">
+  <div class="performance-header">
+    <h3 class="performance-title">Team Performance</h3>
+    <button class="view-details-btn" (click)="viewDetails()">
+      <i class="pi pi-chart-bar"></i>
+      View Details
+    </button>
+  </div>
+  
+  <div class="performance-metrics">
+    <div *ngFor="let item of performanceItems" class="metric-item">
+      <div class="flex justify-between items-center w-full">
+        <div>
+          <p class="metric-label">{{item.name}}</p>
+          <p class="metric-date">{{item.lastUpdated}}</p>
+        </div>
+        <div class="text-right">
+          <p class="metric-value">{{item.value}}%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="sidebar" [class.collapsed]="collapsed">
+  <!-- Sidebar Header -->
+  <div class="sidebar-header">
+    <h2 class="sidebar-title">Menu</h2>
+    <button (click)="toggleSidebar()" class="toggle-button" *ngIf="!collapsed">
+      <i class="pi pi-times"></i>
+    </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="nav-menu">
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-link" data-tooltip="Dashboard">
+      <i class="pi pi-home nav-icon"></i>
+      <span class="nav-text">Dashboard</span>
+    </a>
+
+    <a routerLink="/employees" routerLinkActive="active" class="nav-link" data-tooltip="Employees">
+      <i class="pi pi-users nav-icon"></i>
+      <span class="nav-text">Employees</span>
+    </a>
+
+    <a routerLink="/attendance" routerLinkActive="active" class="nav-link" data-tooltip="Attendance">
+      <i class="pi pi-calendar nav-icon"></i>
+      <span class="nav-text">Attendance</span>
+    </a>
+
+    <a routerLink="/leave" routerLinkActive="active" class="nav-link" data-tooltip="Leave Requests">
+      <i class="pi pi-clock nav-icon"></i>
+      <span class="nav-text">Leave</span>
+    </a>
+
+    <a routerLink="/performance" routerLinkActive="active" class="nav-link" data-tooltip="Performance">
+      <i class="pi pi-chart-bar nav-icon"></i>
+      <span class="nav-text">Performance</span>
+    </a>
+
+    <a routerLink="/announcements" routerLinkActive="active" class="nav-link" data-tooltip="Announcements">
+      <i class="pi pi-megaphone nav-icon"></i>
+      <span class="nav-text">Announcements</span>
+    </a>
+  </nav>
+</div>
+
+<!-- Hamburger Menu for Collapsed State -->
+<button *ngIf="collapsed" (click)="toggleSidebar()" class="hamburger-menu">
+  <i class="pi pi-bars"></i>
+</button>

@@ -1,0 +1,49 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <h3 class="calendar-title">Calendar</h3>
+    <div class="calendar-nav">
+      <button class="nav-button" (click)="previousMonth()">
+        <i class="pi pi-chevron-left"></i>
+      </button>
+      <span class="current-month">{{ getCurrentMonthYear() }}</span>
+      <button class="nav-button" (click)="nextMonth()">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="calendar-grid">
+    <!-- Days of week -->
+    <div *ngFor="let day of daysOfWeek" class="day-header">
+      {{day}}
+    </div>
+    
+    <!-- Calendar days -->
+    <div *ngFor="let day of calendarDays" 
+         class="calendar-day"
+         [ngClass]="{
+           'current-month': day.isCurrentMonth && !day.isToday,
+           'other-month': !day.isCurrentMonth,
+           'today': day.isToday
+         }">
+      <div class="day-number"
+           [ngClass]="{
+             'current-month': day.isCurrentMonth && !day.isToday,
+             'other-month': !day.isCurrentMonth,
+             'today': day.isToday
+           }">
+        {{day.date}}
+      </div>
+      
+      <!-- Event indicators -->
+      <div class="events-container" *ngIf="day.events && day.events.length > 0">
+        <div *ngFor="let event of day.events | slice:0:2" 
+             class="event-item"
+             [ngClass]="'event-' + event.type">
+          {{event.title}}
+        </div>
+        <div *ngIf="day.events.length > 2" class="more-events">+{{day.events.length - 2}} more</div>
+      </div>
+    </div>
+  </div>
+</div>

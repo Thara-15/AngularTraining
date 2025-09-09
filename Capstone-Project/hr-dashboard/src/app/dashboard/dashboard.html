@@ -1,0 +1,41 @@
+<div class="dashboard-container">
+  <!-- Dashboard Header -->
+  <div class="dashboard-header">
+    <h1 class="dashboard-title">
+      <i class="pi pi-chart-line"></i>
+      Dashboard
+    </h1>
+    <p class="dashboard-subtitle">Welcome back! Here's what's happening at your company today.</p>
+  </div>
+  
+  <!-- Overview Cards -->
+  <app-overview-cards></app-overview-cards>
+  
+  <!-- Charts Section (side by side on large screens) -->
+  <div class="charts-section">
+    <app-charts></app-charts>
+  </div>
+
+  <!-- Calendar Full Width -->
+  <div class="calendar-section">
+    <app-calendar></app-calendar>
+  </div>
+  
+  <!-- Announcements Full Width -->
+  <div class="announcements-section">
+    <app-announcements></app-announcements>
+  </div>
+  
+  <div class="bottom-section">
+    <!-- Employee List -->
+    <div class="bottom-left">
+      <app-employee-list></app-employee-list>
+    </div>
+    
+    <!-- Leave Requests -->
+    <div class="bottom-right">
+      <app-leave-requests></app-leave-requests>
+    </div>
+  </div>
+  
+</div>

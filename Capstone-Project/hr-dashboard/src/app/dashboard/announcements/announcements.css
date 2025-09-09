@@ -1,0 +1,92 @@
+/* Announcements container */
+.announcements-container {
+  position: relative;
+  min-height: 120px;
+  padding: 0;
+  margin-top: 1rem; /* align with component rhythm */
+}
+
+/* Announcement item styling and animations */
+.announcement-item {
+  position: absolute;
+  inset: 0 auto auto 0; /* ensure item width uses container width */
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(8px);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  border-left: 3px solid var(--color-yellow);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.06);
+}
+
+.announcement-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Navigation dots */
+.announcement-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.dot-button {
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+}
+
+.dot-button.active { background: var(--color-yellow); }
+
+.dot-button:hover {
+  transform: scale(1.2);
+  background: var(--color-yellow);
+}
+
+/* Hover effect for buttons */
+button.text-blue-600:hover {
+  text-decoration: underline;
+  color: #2563eb;
+}
+
+.announcement-header {
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+
+.announcement-content {
+  color: var(--color-dark-gray);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Add a subtle pulse animation to urgent announcements */
+@keyframes urgentPulse {
+  0% { border-left-color: #ef4444; background-color: #fef2f2; }
+  50% { border-left-color: #dc2626; background-color: #fee2e2; }
+  100% { border-left-color: #ef4444; background-color: #fef2f2; }
+}
+
+.urgent-announcement {
+  animation: urgentPulse 2s infinite;
+  border-left-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+}
+
+/* Responsive: give items breathing room on small screens */
+@media (max-width: 640px) {
+  .announcements-container { min-height: 140px; }
+  .announcement-item { padding: 0.75rem; }
+  .announcement-content { font-size: 0.8125rem; }
+}

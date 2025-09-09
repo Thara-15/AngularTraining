@@ -1,0 +1,129 @@
+/* ---- Container & Page Basics ---- */
+.dashboard-container {
+  padding: 2rem;
+  background-color: var(--color-light-gray);
+  min-height: calc(100vh - 8rem);
+  width: 100%;                   /* full width like other pages */
+  animation: fadeIn 0.6s ease-out;
+  box-sizing: border-box;
+  overflow-x: hidden;             /* prevent horizontal scroll */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Header ---- */
+.dashboard-header {
+  margin-top: 1rem;               /* space below fixed navbar */
+  margin-bottom: 1.5rem;          /* align with section rhythm */
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard-title i {
+  color: var(--color-yellow);
+  font-size: 2rem;
+}
+
+.dashboard-subtitle {
+  color: var(--color-dark-gray);
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  max-width: 60ch;                /* better line-length for readability */
+}
+
+/* ---- New Sections ---- */
+.charts-section,
+.calendar-section,
+.announcements-section {
+  margin: 1.5rem 0;               /* consistent vertical rhythm */
+}
+
+/* ---- Main Dashboard Grid (Charts + Sidebar) ---- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  column-gap: 1.5rem;             /* horizontal spacing between columns */
+  row-gap: 1.5rem;
+  margin: 1.5rem 0;
+  align-items: start;
+}
+
+.dashboard-grid > * { min-width: 0; } /* prevent overflow from inner content */
+
+.charts-column {
+  display: flex;
+  flex-direction: column;
+  /* IMPORTANT: no gap here to avoid double-spacing with child components' mb-6 */
+}
+
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  /* no gap: rely on components' own mb-6 for consistent rhythm */
+}
+
+/* ---- Bottom Section (Employees + Leave Requests) ---- */
+.bottom-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;                    /* only controls column spacing */
+  margin: 1.5rem 0;
+  align-items: start;
+}
+
+.bottom-section > * { min-width: 0; }
+
+.bottom-left,
+.bottom-right {
+  display: flex;
+  flex-direction: column;
+  /* no extra gap; components already have mb-6 */
+}
+
+/* ---- Performance Section ---- */
+.performance-full {
+  margin-top: 1.5rem;             /* align to the same vertical rhythm */
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;   /* stack charts and sidebar */
+    column-gap: 0;
+    row-gap: 1.25rem;
+  }
+
+  .bottom-section {
+    grid-template-columns: 1fr;   /* stack bottom cards */
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container { padding: 1rem; }
+  .dashboard-title { font-size: 2rem; }
+  .dashboard-grid,
+  .bottom-section { row-gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 1.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

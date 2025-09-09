@@ -1,0 +1,23 @@
+<div *ngIf="showLayout" class="app-container" [class.sidebar-collapsed]="sidebarCollapsed">
+  <!-- Sidebar -->
+  <app-sidebar class="sidebar-container" (sidebarToggled)="onSidebarToggle($event)"></app-sidebar>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <app-navbar class="navbar-container"></app-navbar>
+
+    <!-- Content Area -->
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- Footer -->
+    <app-footer class="footer-container"></app-footer>
+  </div>
+</div>
+
+<!-- Login Page (No Layout) -->
+<div *ngIf="!showLayout" class="login-wrapper">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,135 @@
+.attendance-container {
+  padding: 2rem;
+  background-color: var(--color-light-gray);
+  min-height: calc(100vh - 8rem);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-title i {
+  color: var(--color-yellow);
+  font-size: 2rem;
+}
+
+.page-subtitle {
+  color: var(--color-dark-gray);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.attendance-table {
+  background: var(--color-white);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-header {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem;
+}
+
+.table-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.table-content {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: var(--color-black);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  color: var(--color-dark-gray);
+}
+
+tr:hover {
+  background: #f9fafb;
+}
+
+.employee-name {
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.status-icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.status-present {
+  color: #10b981;
+}
+
+.status-absent {
+  color: #ef4444;
+}
+
+.status-late {
+  color: var(--color-yellow);
+}
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .attendance-container {
+    padding: 1rem;
+  }
+  
+  th, td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}

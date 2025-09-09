@@ -1,0 +1,58 @@
+<div class="attendance-container">
+  <div class="page-header">
+    <h1 class="page-title">
+      <i class="pi pi-calendar"></i>
+      Attendance
+    </h1>
+    <p class="page-subtitle">Monthly attendance summary and tracking</p>
+  </div>
+
+  <div class="attendance-table">
+    <div class="table-header">
+      <h3>{{ getCurrentMonth() }} Attendance Report</h3>
+    </div>
+    
+    <div class="table-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>Days Present</th>
+            <th>Days Absent</th>
+            <th>Late Arrivals</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of attendanceRecords">
+            <td class="employee-name">{{ record.employeeName }}</td>
+            <td>{{ record.department }}</td>
+            <td>
+              <div class="stats-row">
+                <i class="pi pi-check-circle status-icon status-present"></i>
+                {{ record.daysPresent }}
+              </div>
+            </td>
+            <td>
+              <div class="stats-row">
+                <i class="pi pi-times-circle status-icon status-absent"></i>
+                {{ record.daysAbsent }}
+              </div>
+            </td>
+            <td>
+              <div class="stats-row">
+                <i class="pi pi-clock status-icon status-late"></i>
+                {{ record.lateArrivals }}
+              </div>
+            </td>
+            <td>
+              <i class="pi" [ngClass]="getStatusIcon(record.status)"></i>
+              {{ record.status }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

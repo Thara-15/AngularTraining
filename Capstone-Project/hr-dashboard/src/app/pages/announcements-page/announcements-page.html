@@ -1,0 +1,39 @@
+<div class="announcements-container">
+  <div class="page-header">
+    <h1 class="page-title">
+      <i class="pi pi-megaphone"></i>
+      Announcements
+    </h1>
+    <p class="page-subtitle">Company news and important updates</p>
+  </div>
+
+  <div class="announcements-list" *ngIf="announcements.length > 0">
+    <div class="announcement-card" *ngFor="let announcement of announcements">
+      <div class="announcement-header">
+        <h3 class="announcement-title">{{ announcement.title }}</h3>
+        <div class="announcement-date">
+          <i class="pi pi-calendar"></i>
+          {{ formatDate(announcement.date) }}
+        </div>
+      </div>
+      
+      <p class="announcement-message">{{ announcement.message }}</p>
+      
+      <div class="announcement-footer">
+        <div class="announcement-author">
+          <i class="pi pi-user"></i>
+          {{ announcement.author }}
+        </div>
+        <span class="priority-badge" [ngClass]="getPriorityClass(announcement.priority)">
+          {{ announcement.priority }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="announcements.length === 0">
+    <i class="pi pi-megaphone"></i>
+    <h3>No Announcements</h3>
+    <p>There are no announcements at this time.</p>
+  </div>
+</div>

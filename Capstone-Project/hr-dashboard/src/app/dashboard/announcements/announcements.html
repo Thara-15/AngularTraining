@@ -1,0 +1,62 @@
+<div class="announcements-section">
+  <div class="announcements-header">
+    <h3 class="announcements-title">Announcements</h3>
+    <button class="view-all-btn" (click)="viewAllAnnouncements()">
+      <i class="pi pi-external-link"></i>
+      View All
+    </button>
+  </div>
+  
+  <div class="announcements-container">
+    <div class="announcement-item" *ngFor="let announcement of announcements; let i = index" 
+         [ngClass]="{'active': i === currentAnnouncementIndex}">
+      <div class="flex items-start">
+        <div [ngClass]="{
+          'flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white': true,
+          'bg-blue-500': announcement.type === 'info',
+          'bg-yellow-500': announcement.type === 'warning',
+          'bg-green-500': announcement.type === 'success',
+          'bg-red-500': announcement.type === 'urgent'
+        }">
+          <!-- Info Icon -->
+          <svg *ngIf="announcement.type === 'info'" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          
+          <!-- Warning Icon -->
+          <svg *ngIf="announcement.type === 'warning'" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          
+          <!-- Success Icon -->
+          <svg *ngIf="announcement.type === 'success'" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          
+          <!-- Urgent Icon -->
+          <svg *ngIf="announcement.type === 'urgent'" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        
+        <div class="ml-4 flex-1">
+          <h4 class="text-sm font-medium text-gray-900">{{announcement.title}}</h4>
+          <p class="mt-1 text-sm text-gray-600">{{announcement.content}}</p>
+          <div class="mt-2 flex justify-between items-center">
+            <span class="text-xs text-gray-500">{{announcement.date}}</span>
+            <button class="text-xs text-blue-600 hover:text-blue-800 transition-colors duration-300">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation dots -->
+    <div class="announcement-dots">
+      <button *ngFor="let announcement of announcements; let i = index" 
+              class="dot-button"
+              [ngClass]="{'active': i === currentAnnouncementIndex}"
+              (click)="setCurrentAnnouncement(i)">
+      </button>
+    </div>
+  </div>
+</div>

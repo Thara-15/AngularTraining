@@ -1,0 +1,153 @@
+/* ---- Table Container ---- */
+.table-container {
+  background: var(--color-white);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Header ---- */
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.table-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background: var(--color-white);
+  color: var(--color-black);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background: #f9fafb;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.view-all-btn i { color: var(--color-yellow); }
+
+/* ---- Table Content ---- */
+.table-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto; /* avatar, info, position, department, status */
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #f3f4f6;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.table-row:hover {
+  border-color: #e5e7eb;
+  background-color: #fafafa;
+}
+
+/* Avatar and Info */
+.employee-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.employee-info { min-width: 0; }
+
+.employee-name {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.employee-email {
+  margin: 0.125rem 0 0 0;
+  color: var(--color-dark-gray);
+  font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.status-active { background-color: #dcfce7; color: #166534; }
+.status-pending { background-color: #fef3c7; color: #92400e; }
+.status-rejected { background-color: #fee2e2; color: #b91c1c; }
+
+/* Responsive columns */
+@media (max-width: 768px) {
+  .table-row { grid-template-columns: auto 1fr auto; }
+  .table-row > span:nth-of-type(1), /* position */
+  .table-row > span:nth-of-type(2)  /* department */ { display: none; }
+}
+
+@media (max-width: 480px) {
+  .table-container { padding: 1rem; }
+  .employee-email { display: none; }
+}
+
+/* ---- Existing effects preserved ---- */
+/* Add hover effect for employee rows */
+.employee-row {
+  position: relative;
+  overflow: hidden;
+}
+
+.employee-row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #3B82F6; /* Blue color */
+  transition: width 0.3s ease;
+}
+
+.employee-row:hover::after {
+  width: 100%;
+}
+
+/* Add subtle scale effect on hover for buttons */
+button svg {
+  transition: transform 0.2s ease;
+}
+
+button:hover svg {
+  transform: scale(1.15);
+}

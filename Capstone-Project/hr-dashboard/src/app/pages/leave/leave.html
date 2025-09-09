@@ -1,0 +1,58 @@
+<div class="leave-container">
+  <div class="page-header">
+    <h1 class="page-title">
+      <i class="pi pi-clock"></i>
+      Leave Requests
+    </h1>
+    <p class="page-subtitle">Manage and review employee leave requests</p>
+  </div>
+
+  <div class="leave-table">
+    <div class="table-header">
+      <h3>Pending & Recent Leave Requests</h3>
+    </div>
+    
+    <div class="table-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>From - To Dates</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of leaveRequests">
+            <td class="employee-name">{{ request.employeeName }}</td>
+            <td>
+              <span class="leave-type" [ngClass]="getLeaveTypeClass(request.leaveType)">
+                {{ request.leaveType }}
+              </span>
+            </td>
+            <td>{{ formatDateRange(request.fromDate, request.toDate) }}</td>
+            <td>
+              <span class="status-badge" [ngClass]="getStatusClass(request.status)">
+                {{ request.status }}
+              </span>
+            </td>
+            <td>
+              <div class="action-buttons" *ngIf="request.status === 'Pending'">
+                <button class="btn btn-approve" (click)="approveRequest(request.id)">
+                  <i class="pi pi-check"></i> Approve
+                </button>
+                <button class="btn btn-reject" (click)="rejectRequest(request.id)">
+                  <i class="pi pi-times"></i> Reject
+                </button>
+              </div>
+              <span *ngIf="request.status !== 'Pending'" class="text-gray-500">
+                {{ request.status }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

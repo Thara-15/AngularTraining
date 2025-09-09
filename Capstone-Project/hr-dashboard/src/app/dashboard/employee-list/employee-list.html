@@ -1,0 +1,28 @@
+<div class="table-container">
+  <div class="table-header">
+    <h3 class="table-title">Recent Employees</h3>
+    <button class="view-all-btn" (click)="viewAllEmployees()">
+      <i class="pi pi-users"></i>
+      View All
+    </button>
+  </div>
+  
+  <div class="table-content">
+    <div *ngFor="let employee of employees" class="table-row">
+      <img [src]="employee.avatar" alt="Employee" class="employee-avatar">
+      <div class="employee-info">
+        <p class="employee-name">{{employee.name}}</p>
+        <p class="employee-email">{{employee.email}}</p>
+      </div>
+      <span class="text-sm">{{employee.position}}</span>
+      <span class="text-sm">{{employee.department}}</span>
+      <span class="status-badge" [ngClass]="{
+        'status-active': employee.status === 'Active',
+        'status-pending': employee.status === 'New',
+        'status-rejected': employee.status === 'On Leave'
+      }">
+        {{employee.status}}
+      </span>
+    </div>
+  </div>
+</div>

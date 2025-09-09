@@ -1,0 +1,46 @@
+<div class="performance-container">
+  <div class="page-header">
+    <h1 class="page-title">
+      <i class="pi pi-chart-bar"></i>
+      Performance
+    </h1>
+    <p class="page-subtitle">Department KPIs and performance metrics</p>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card" *ngFor="let kpi of departmentKPIs">
+      <div class="kpi-header">
+        <h3 class="kpi-title">{{ kpi.department }}</h3>
+        <i class="pi" [ngClass]="kpi.icon" class="kpi-icon"></i>
+      </div>
+      
+      <div class="kpi-percentage">{{ kpi.percentage }}%</div>
+      
+      <div class="progress-container">
+        <div 
+          class="progress-bar" 
+          [ngClass]="kpi.progressClass"
+          [style.width.%]="kpi.animatedPercentage">
+        </div>
+      </div>
+      
+      <div class="kpi-details">
+        <div class="detail-item">
+          <span class="detail-label">Target:</span>
+          <span class="detail-value">{{ kpi.target }}%</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Achieved:</span>
+          <span class="detail-value">{{ kpi.achieved }}%</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Trend:</span>
+          <span class="trend-indicator" [ngClass]="kpi.trend > 0 ? 'trend-up' : 'trend-down'">
+            <i class="pi" [ngClass]="kpi.trend > 0 ? 'pi-arrow-up' : 'pi-arrow-down'"></i>
+            {{ Math.abs(kpi.trend) }}%
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

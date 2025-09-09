@@ -1,0 +1,79 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-content">
+      <!-- Logo and Company Name -->
+      <div class="navbar-left">
+        <div class="logo-container">
+          <!-- Company Logo -->
+          <i class="pi pi-building logo-icon"></i>
+          <!-- Company Name -->
+          <span class="company-name">HR Portal</span>
+        </div>
+      </div>
+
+      <!-- Right Side - Notification and Profile -->
+      <div class="navbar-right">
+        <!-- Notification Bell -->
+        <div class="notification-container">
+          <button class="notification-btn" (click)="toggleNotifications()">
+            <i class="pi pi-bell notification-icon"></i>
+            <span class="notification-badge" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+          </button>
+
+          <!-- Notifications Dropdown -->
+          <div class="notifications-dropdown" [class.show]="showNotifications">
+            <div class="dropdown-header">
+              <h4>Notifications</h4>
+              <span class="notification-count">{{ unreadCount }} new</span>
+            </div>
+            
+            <div class="notifications-list">
+              <div 
+                *ngFor="let notification of recentNotifications" 
+                class="notification-item"
+                [class.unread]="!notification.read"
+                (click)="markAsRead(notification)">
+                <div class="notification-content">
+                  <h5 class="notification-title">{{ notification.title }}</h5>
+                  <p class="notification-message">{{ notification.message }}</p>
+                  <span class="notification-date">{{ formatDate(notification.date) }}</span>
+                </div>
+                <div class="notification-indicator" *ngIf="!notification.read"></div>
+              </div>
+            </div>
+            
+            <div class="dropdown-footer">
+              <button class="view-all-btn" (click)="viewAllAnnouncements()">
+                <i class="pi pi-external-link"></i>
+                View All Announcements
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="profile-container">
+          <div class="profile-dropdown">
+            <button class="profile-btn" id="user-menu">
+              <img class="profile-image" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Profile">
+            </button>
+            
+            <div class="profile-menu">
+              <div class="profile-info">
+                <span class="profile-name">Admin User</span>
+                <span class="profile-role">Administrator</span>
+              </div>
+              <button class="logout-btn" (click)="logout()">
+                <i class="pi pi-sign-out"></i>
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Overlay for closing dropdowns -->
+<div class="dropdown-overlay" *ngIf="showNotifications" (click)="showNotifications = false"></div>

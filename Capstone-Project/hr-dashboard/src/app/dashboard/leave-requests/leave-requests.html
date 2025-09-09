@@ -1,0 +1,28 @@
+<div class="table-container">
+  <div class="table-header">
+    <h3 class="table-title">Leave Requests</h3>
+    <button class="view-all-btn" (click)="viewAllRequests()">
+      <i class="pi pi-calendar"></i>
+      View All
+    </button>
+  </div>
+  
+  <div class="table-content">
+    <div *ngFor="let request of leaveRequests" class="table-row" style="grid-template-columns: auto 1fr auto auto auto auto;">
+      <img [src]="request.avatar" alt="Employee" class="employee-avatar">
+      <div class="employee-info">
+        <p class="employee-name">{{request.name}}</p>
+      </div>
+      <span class="text-sm">{{request.type}}</span>
+      <span class="text-sm">{{request.from}}</span>
+      <span class="text-sm">{{request.to}}</span>
+      <span class="status-badge" [ngClass]="{
+        'status-pending': request.status === 'Pending',
+        'status-approved': request.status === 'Approved',
+        'status-rejected': request.status === 'Rejected'
+      }">
+        {{request.status}}
+      </span>
+    </div>
+  </div>
+</div>

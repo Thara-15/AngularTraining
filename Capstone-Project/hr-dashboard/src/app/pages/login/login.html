@@ -21,7 +21,6 @@
           [(ngModel)]="username"
           name="username"
           placeholder="Enter your username"
-          (keypress)="onKeyPress($event)"
           [disabled]="isLoading">
       </div>
 
@@ -37,7 +36,6 @@
           [(ngModel)]="password"
           name="password"
           placeholder="Enter your password"
-          (keypress)="onKeyPress($event)"
           [disabled]="isLoading">
       </div>
 

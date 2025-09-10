@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +18,16 @@ export class LoginComponent {
   errorMessage: string = '';
   isLoading: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    private toastService: ToastService
+  ) {}
 
   onLogin(): void {
     if (!this.username || !this.password) {
       this.errorMessage = 'Please enter both username and password';
+      this.toastService.showError('Login Failed', 'Please enter both username and password.');
       return;
     }
 
@@ -30,16 +36,13 @@ export class LoginComponent {
 
     // Simulate loading delay for better UX
     setTimeout(() => {
-      if (!this.authService.login(this.username, this.password)) {
+      if (this.authService.login(this.username, this.password)) {
+        this.toastService.showLoginSuccess();
+      } else {
         this.errorMessage = 'Invalid username or password';
+        this.toastService.showLoginError();
       }
       this.isLoading = false;
     }, 1000);
-  }
-
-  onKeyPress(event: KeyboardEvent): void {
-    if (event.key === 'Enter') {
-      this.onLogin();
-    }
   }
 }

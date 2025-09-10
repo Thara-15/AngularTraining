@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ToastService } from '../../services/toast.service';
 
 interface LeaveRequest {
   id: number;
@@ -20,7 +21,10 @@ interface LeaveRequest {
   styleUrl: './leave-requests.css'
 })
 export class LeaveRequestsComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private toastService: ToastService
+  ) {}
 
   leaveRequests: LeaveRequest[] = [
     {
@@ -65,6 +69,7 @@ export class LeaveRequestsComponent {
     const request = this.leaveRequests.find(req => req.id === id);
     if (request) {
       request.status = 'Approved';
+      this.toastService.showApprovalSuccess();
     }
   }
 
@@ -72,6 +77,7 @@ export class LeaveRequestsComponent {
     const request = this.leaveRequests.find(req => req.id === id);
     if (request) {
       request.status = 'Rejected';
+      this.toastService.showRejectionSuccess();
     }
   }
 

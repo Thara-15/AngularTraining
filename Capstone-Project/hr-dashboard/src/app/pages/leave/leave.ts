@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ToastService } from '../../services/toast.service';
 
 interface LeaveRequest {
   id: number;
@@ -18,6 +19,8 @@ interface LeaveRequest {
   styleUrl: './leave.css'
 })
 export class LeaveComponent {
+  constructor(private toastService: ToastService) {}
+
   leaveRequests: LeaveRequest[] = [
     { id: 1, employeeName: 'John Smith', leaveType: 'Vacation', fromDate: new Date('2024-02-15'), toDate: new Date('2024-02-20'), status: 'Pending' },
     { id: 2, employeeName: 'Sarah Johnson', leaveType: 'Sick', fromDate: new Date('2024-02-10'), toDate: new Date('2024-02-12'), status: 'Approved' },
@@ -56,6 +59,7 @@ export class LeaveComponent {
     const request = this.leaveRequests.find(r => r.id === id);
     if (request) {
       request.status = 'Approved';
+      this.toastService.showApprovalSuccess();
     }
   }
 
@@ -63,6 +67,7 @@ export class LeaveComponent {
     const request = this.leaveRequests.find(r => r.id === id);
     if (request) {
       request.status = 'Rejected';
+      this.toastService.showRejectionSuccess();
     }
   }
 }

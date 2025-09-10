@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AttendanceComponent } from './attendance';
+import { compileOpaqueAsyncClassMetadata } from '@angular/compiler';
 
 describe('Attendance', () => {
   let component: AttendanceComponent;

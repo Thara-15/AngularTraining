@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ToastService } from '../../services/toast.service';
 
 interface Notification {
   id: number;
@@ -52,7 +53,11 @@ export class NavbarComponent {
     }
   ];
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    private toastService: ToastService
+  ) {}
 
   get unreadCount(): number {
     return this.notifications.filter(n => !n.read).length;
@@ -76,6 +81,7 @@ export class NavbarComponent {
   }
 
   logout(): void {
+    this.toastService.showLogoutSuccess();
     this.authService.logout();
   }
 
